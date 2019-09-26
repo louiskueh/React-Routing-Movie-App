@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { ListGroup, FormControl, InputGroup, Button } from 'react-bootstrap'
+import { ListGroup, FormControl, InputGroup, Button, Image } from 'react-bootstrap'
 import DisplayList from './DisplayList';
 import { Link } from 'react-router-dom'
 export default class MovieDetails extends React.Component {
@@ -39,12 +39,16 @@ export default class MovieDetails extends React.Component {
         console.log('PROPS', this.props.movieDetails)
         return (
             <div>
-            <Link to="/"><h1>Home</h1></Link>
+                <Link to="/"><h1>Home</h1></Link>
                 <ListGroup>
                     <ListGroup.Item>Title: {this.state.movieDetails.Title}</ListGroup.Item>
                     <ListGroup.Item>Year: {this.state.movieDetails.Year}</ListGroup.Item>
                     <ListGroup.Item>Plot: {this.state.movieDetails.Plot}</ListGroup.Item>
                     <ListGroup.Item>Metascore: {this.state.movieDetails.Metascore}</ListGroup.Item>
+                    <ListGroup.Item>
+                        <Image src={this.state.movieDetails.Poster} />
+
+                    </ListGroup.Item>
                 </ListGroup>
             </div>
         );

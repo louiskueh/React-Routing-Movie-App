@@ -1,6 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
+
 import App from './App';
 import MovieDetails from './MovieDetails';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
