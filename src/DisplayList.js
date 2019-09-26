@@ -26,7 +26,7 @@ export default class DisplayList extends React.Component {
         {this.props.data.map((x, i) =>
           (
             <Link to={"/details/" + x.imdbID}>
-              <ListGroup.Item key={i} >{x.Title}  <Image  style={{width: 50, height: 'auto'}} src={x.Poster}  thumbnail/></ListGroup.Item>
+              <ListGroup.Item action variant="light" style={{display: 'flex', justifyContent: 'center'}} key={i} >{x.Title}  <Image  style={{width: 50, height: 'auto'}} src={x.Poster}  thumbnail/></ListGroup.Item>
               {/* <ListGroup.Item key={i} >{x.imdbID}</ListGroup.Item> */}
             </Link>
           )

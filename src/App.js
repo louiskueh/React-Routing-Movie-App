@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { ListGroup, FormControl, InputGroup, Button } from 'react-bootstrap'
+import { ListGroup, Container, FormControl,Jumbotron, InputGroup, Button } from 'react-bootstrap'
 import DisplayList from './DisplayList';
 
 export default class App extends React.Component {
@@ -22,8 +22,8 @@ export default class App extends React.Component {
   componentDidMount() {
     this.fetchData();
   }
-  handleChange(data){
-    this.setState({searchTerm: data.target.value});
+  handleChange(data) {
+    this.setState({ searchTerm: data.target.value });
   }
   fetchData() {
     let searchTerm = this.state.searchTerm
@@ -40,20 +40,27 @@ export default class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <InputGroup className="mb-3">
-          <FormControl onChange={this.handleChange}
-            placeholder="Recipient's username"
-            aria-label="Recipient's username"
-            aria-describedby="basic-addon2"
-          />
-          <InputGroup.Append>
-            <Button onClick={this.fetchData} variant="outline-secondary">Submit</Button>
-          </InputGroup.Append>
-        </InputGroup>
+        <Container>
 
-        <ListGroup>
-          <DisplayList data={this.state.user.Search}></DisplayList>
-        </ListGroup>
+          <Jumbotron>
+            <h1>Movie database</h1>
+            <p></p>
+          </Jumbotron>
+          <InputGroup className="mb-3">
+            <FormControl onChange={this.handleChange}
+              placeholder="Recipient's username"
+              aria-label="Recipient's username"
+              aria-describedby="basic-addon2"
+            />
+            <InputGroup.Append>
+              <Button onClick={this.fetchData} variant="outline-secondary">Submit</Button>
+            </InputGroup.Append>
+          </InputGroup>
+
+          <ListGroup>
+            <DisplayList data={this.state.user.Search}></DisplayList>
+          </ListGroup>
+        </Container>
       </div>
     );
   }
