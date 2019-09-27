@@ -3,6 +3,7 @@ import axios from 'axios';
 import { ListGroup, FormControl, InputGroup, Button, Image, Container } from 'react-bootstrap'
 import DisplayList from './DisplayList';
 import { Link } from 'react-router-dom'
+
 export default class MovieDetails extends React.Component {
 
     constructor(props) {
