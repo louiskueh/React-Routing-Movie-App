@@ -5,11 +5,11 @@ pipeline {
     
   stages {
         
-    // stage('Cloning Git') {
-    //   steps {
-    //     git 'https://github.com/gustavoapolinario/node-todo-frontend'
-    //   }
-    // }
+    stage('Cloning Git') {
+      steps {
+        git 'https://github.com/jovanhan2/React-Routing-Movie-App'
+      }
+    }
         
     stage('Install dependencies') {
       steps {
