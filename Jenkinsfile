@@ -5,11 +5,11 @@ pipeline {
     
   stages {
         
-    stage('Cloning Git') {
-      steps {
-        git 'https://github.com/jovanhan2/React-Routing-Movie-App'
-      }
-    }
+    // stage('Cloning Git') {
+    //   steps {
+    //     git 'https://github.com/jovanhan2/React-Routing-Movie-App'
+    //   }
+    // }
         
     stage('Install dependencies') {
       steps {
@@ -17,10 +17,10 @@ pipeline {
       }
     }
      
-    stage('Test') {
-      steps {
-         sh 'npm test'
-      }
-    }      
+    // stage('Test') {
+    //   steps {
+    //      sh 'npm test'
+    //   }
+    // }      
   }
 }
