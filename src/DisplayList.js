@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { ListGroup, Image } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+let url = "http://13.80.18.211:5000/"
 
 export default class DisplayList extends React.Component {
 
@@ -12,7 +13,7 @@ export default class DisplayList extends React.Component {
     };
   }
   componentDidMount() {
-    axios.get('http://localhost:5000/all').then((response) => {
+    axios.get(url+"all/").then((response) => {
       console.log("Recieved movies" , response)
       this.setState({ movieIdVisited: response.data });
     }).catch((error) => {
@@ -21,7 +22,7 @@ export default class DisplayList extends React.Component {
   }
   sendMovie(movieDetails) {
 
-    axios.get('http://localhost:5000/add/' + movieDetails).then((response) => {
+    axios.get(url+"add/" + movieDetails).then((response) => {
       console.log("Posted movie " + movieDetails)
     }).catch((error) => {
       console.log("error is" + error)
