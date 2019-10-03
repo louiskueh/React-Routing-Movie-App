@@ -2,6 +2,9 @@ pipeline {
    agent {
         docker { image 'node:7-alpine' }
     }
+  environment {
+        HOME = '.'
+    }
     
   tools {nodejs "node"}
     
