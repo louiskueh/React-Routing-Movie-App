@@ -8,19 +8,21 @@ pipeline {
     
   stages {
       
+  
+    stage('Install dependencies') {
     agent {
         docker { image 'node:12-alpine' }
     }
-    stage('Install dependencies') {
       steps {
         sh 'npm install'
       }
     }
      //
+
+    stage('Start frontend') {
     agent {
         docker { image 'node:12-alpine' }
     }
-    stage('Start frontend') {
       steps {
          sh 'npm start'
       }
