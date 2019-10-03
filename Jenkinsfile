@@ -22,18 +22,20 @@ pipeline {
     }
      //
 
-    stage('Start frontend') {
+    // stage('Start frontend') {
 
-      steps {
-         sh 'npm start'
-      }
-    }   
-    //     stage('Start server') {
     //   steps {
-    //     sh'cd Server'
     //      sh 'npm start'
     //   }
     // }   
+      stage('Deliver') {
+      steps {
+          sh './deliver.sh'
+          input message: 'Finished using the web site? (Click "Proceed" to continue)'
+          sh './kill.sh'
+      }
+  }
+
       
     
   }
