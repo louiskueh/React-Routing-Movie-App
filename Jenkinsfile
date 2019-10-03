@@ -13,7 +13,7 @@ pipeline {
         sh 'npm install'
       }
     }
-     
+     //
     // stage('Start frontend') {
     //   steps {
     //      sh 'npm start'
