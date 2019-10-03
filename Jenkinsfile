@@ -4,12 +4,7 @@ pipeline {
   tools {nodejs "node"}
     
   stages {
-        
-    // stage('Cloning Git') {
-    //   steps {
-    //     git 'https://github.com/jovanhan2/React-Routing-Movie-App'
-    //   }
-    // }
+      
         
     stage('Install dependencies') {
       steps {
@@ -17,12 +12,18 @@ pipeline {
       }
     }
      
-    // stage('Test') {
-    //   steps {
-    //      sh 'npm test'
-    //   }
-    // }   
-    //   
+    stage('Start frontend') {
+      steps {
+         sh 'npm start'
+      }
+    }   
+        stage('Start server') {
+      steps {
+        sh'cd Server'
+         sh 'npm start'
+      }
+    }   
+      
     
   }
 }
