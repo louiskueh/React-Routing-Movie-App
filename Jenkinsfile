@@ -12,17 +12,17 @@ pipeline {
       }
     }
      
-    stage('Start frontend') {
-      steps {
-         sh 'npm start'
-      }
-    }   
-        stage('Start server') {
-      steps {
-        sh'cd Server'
-         sh 'npm start'
-      }
-    }   
+    // stage('Start frontend') {
+    //   steps {
+    //      sh 'npm start'
+    //   }
+    // }   
+    //     stage('Start server') {
+    //   steps {
+    //     sh'cd Server'
+    //      sh 'npm start'
+    //   }
+    // }   
       
     
   }
