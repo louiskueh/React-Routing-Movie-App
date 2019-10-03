@@ -28,6 +28,7 @@ pipeline {
     //      sh 'npm start'
     //   }
     // }   
+    //
       stage('Deliver') {
       steps {
           sh 'bash ./deliver.sh'
