@@ -1,5 +1,7 @@
 pipeline {
-  agent none
+      agent {
+        docker { image 'node:12-alpine' }
+    }
 
   environment {
         HOME = '.'
