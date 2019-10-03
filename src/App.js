@@ -43,7 +43,7 @@ export default class App extends React.Component {
         <Container>
 
           <Jumbotron>
-            <h1>Movie database</h1>
+            <h1>Movie database CHANGED</h1>
             <p></p>
           </Jumbotron>
           <InputGroup className="mb-3">
