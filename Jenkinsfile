@@ -31,9 +31,12 @@ pipeline {
     //
       stage('Deliver') {
       steps {
-          sh 'bash ./deliver.sh'
+          sh 'chmod 775 ./deliver.sh'
+          sh './deliver.sh'
           input message: 'Finished using the web site? (Click "Proceed" to continue)'
-          sh 'bash ./kill.sh'
+          sh 'chmod 775 ./kill.sh'
+          sh './kill.sh'
+
       }
   }
 
