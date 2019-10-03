@@ -1,7 +1,5 @@
 pipeline {
-   agent {
-        docker { image 'node:12-alpine' }
-    }
+
   environment {
         HOME = '.'
     }
@@ -10,13 +8,18 @@ pipeline {
     
   stages {
       
-        
+    agent {
+        docker { image 'node:12-alpine' }
+    }
     stage('Install dependencies') {
       steps {
         sh 'npm install'
       }
     }
      //
+    agent {
+        docker { image 'node:12-alpine' }
+    }
     stage('Start frontend') {
       steps {
          sh 'npm start'
